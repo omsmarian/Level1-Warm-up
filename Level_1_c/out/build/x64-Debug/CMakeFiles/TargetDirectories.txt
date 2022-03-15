@@ -1,0 +1,5 @@
+D:/Dell/Pictures/Itba/EDA/Level 1/out/build/x64-Debug/CMakeFiles/orbitalsim.dir
+D:/Dell/Pictures/Itba/EDA/Level 1/out/build/x64-Debug/CMakeFiles/orbitalsim_test.dir
+D:/Dell/Pictures/Itba/EDA/Level 1/out/build/x64-Debug/CMakeFiles/test.dir
+D:/Dell/Pictures/Itba/EDA/Level 1/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+D:/Dell/Pictures/Itba/EDA/Level 1/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
