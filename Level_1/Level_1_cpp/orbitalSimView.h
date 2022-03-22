@@ -3,6 +3,13 @@
  *
  * 22.08 EDA
  * Copyright (C) 2022 Marc S. Ressl
+ *
+ * Grupo 6
+ * Participants: Tomas Wickham, Mariano Oms
+ *
+ * Level 1a:
+ *
+ * This file contains the class responsible for displaying the simulation
  */
 
 #ifndef ORBITALSIMVIEW_H

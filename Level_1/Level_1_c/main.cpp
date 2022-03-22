@@ -4,6 +4,11 @@
  * 22.08 EDA
  * Copyright (C) 2022 Marc S. Ressl
  *
+ * Grupo 6
+ * Participants: Tomas Wickham, Mariano Oms
+ *
+ * Level 1a:
+ *
  * Main module
  */
 
@@ -14,54 +19,54 @@
 
 int main()
 {
-    const int screenWidth = 800;
-    const int screenHeight = 450;
+	const int screenWidth = 800;
+	const int screenHeight = 450;
 
-    InitWindow(screenWidth, screenHeight, "EDA Orbital Simulation");
+	InitWindow(screenWidth, screenHeight, "EDA Orbital Simulation");
 
-    // Camera
-    Camera3D camera;
-    camera.position = {10.0f, 10.0f, 10.0f};
-    camera.target = {0.0f, 0.0f, 0.0f};
-    camera.up = {0.0f, 1.0f, 0.0f};
-    camera.fovy = 45.0f;
-    camera.projection = CAMERA_PERSPECTIVE;
-    SetCameraMode(camera, CAMERA_FREE);
+	// Camera
+	Camera3D camera;
+	camera.position = { 10.0f, 10.0f, 10.0f };
+	camera.target = { 0.0f, 0.0f, 0.0f };
+	camera.up = { 0.0f, 1.0f, 0.0f };
+	camera.fovy = 45.0f;
+	camera.projection = CAMERA_PERSPECTIVE;
+	SetCameraMode(camera, CAMERA_FREE);
 
-    SetCameraPanControl(MOUSE_BUTTON_LEFT);
+	SetCameraPanControl(MOUSE_BUTTON_LEFT);
 
-    // Orbital simulation
-    float fps = 60.0F;							  // frames per second
-    float timeMultiplier = 100 * SECONDS_PER_DAY; // Simulation speed: 100 days per real second
-    float timeStep = timeMultiplier / fps;
+	// Orbital simulation
+	float fps = 60.0F;							  // frames per second
+	float timeMultiplier = 100 * SECONDS_PER_DAY; // Simulation speed: 100 days per real second
+	float timeStep = timeMultiplier / fps;
 
-    OrbitalSim* sim = makeOrbitalSim(timeStep);
+	OrbitalSim* sim = makeOrbitalSim(timeStep);
 
-    // Game loop
-    while (!WindowShouldClose())
-    {
-        // Update simulation
-        updateOrbitalSim(sim);
+	// Game loop
+	while (!WindowShouldClose())
+	{
+		// Update simulation
+		updateOrbitalSim(sim);
 
-        // Camera
-        UpdateCamera(&camera);
+		// Camera
+		UpdateCamera(&camera);
 
-        // Render
-        BeginDrawing();
-        ClearBackground(BLACK);
+		// Render
+		BeginDrawing();
+		ClearBackground(BLACK);
 
-        BeginMode3D(camera);
-        renderOrbitalSim3D(sim);
-        DrawGrid(10, 10.0f);
-        EndMode3D();
+		BeginMode3D(camera);
+		renderOrbitalSim3D(sim);
+		DrawGrid(10, 10.0f);
+		EndMode3D();
 
-        renderOrbitalSim2D(sim);
-        EndDrawing();
-    }
+		renderOrbitalSim2D(sim);
+		EndDrawing();
+	}
 
-    CloseWindow();
+	CloseWindow();
 
-    freeOrbitalSim(sim);
+	freeOrbitalSim(sim);
 
-    return 0;
+	return 0;
 }

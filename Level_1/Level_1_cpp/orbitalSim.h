@@ -3,6 +3,13 @@
  *
  * 22.08 EDA
  * Copyright (C) 2022 Marc S. Ressl
+ *
+ * Grupo 6
+ * Participants: Tomas Wickham, Mariano Oms
+ *
+ * Level 1a:
+ *
+ * This file contains the simulation class
  */
 
 #ifndef ORBITALSIM_H
@@ -17,21 +24,23 @@
 class OrbitalSim
 {
 public:
-	OrbitalSim(float timeStep); //OrbitalSim *makeOrbitalSim(float timeStep);
-	~OrbitalSim(); //void freeOrbitalSim(OrbitalSim *sim);
-    
-    void updateOrbitalSim();
-   
-    float timeSinceStart;
-    float quantity;
-    OrbitalBody* ptr;
+	OrbitalSim(float timeStep);
+	~OrbitalSim();
+
+	void updateOrbitalSim();
+	float getTimeSinceStart();
+	float getQuantity();
+	OrbitalBody* getPtr();
 
 private:
-    void acerlationCalc();
-    void velocityCalc();
-    void positionCalc();
+	void acerlationCalc();
+	void velocityCalc();
+	void positionCalc();
 
-    float timeStep;
+	float timeSinceStart;
+	float quantity;
+	float timeStep;
+	OrbitalBody* ptr;
 };
 
 #endif
